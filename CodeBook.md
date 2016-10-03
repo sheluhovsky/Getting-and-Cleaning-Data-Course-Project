@@ -1,8 +1,33 @@
 # Code Book for Getting and Cleaning Data Project
-## Introduciton
+## Introduction
 This document summarizes the variables, the data, and transformations / work implemented in `run_analysis.R`.
 
+##Study Design
+###Step 1
+The script sets a word directory as well as creates `data` folder, if needed. It also downloads [Samsung data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) into `data` folder.
+
 ##Variables
+1. `destFile` - name of the file to save Samsung data on computer in the `data` folder.
+2. `activityLabels` - data frame created on top of  `activity_labels.txt`.
+3. `features` - data frame created on top of  `features.txt`.
+4. `subjectHeader` - header name for subject for test and train data sets.
+5. `activityHeader` - header name for activity for test and train data sets.
+6. `subjectTest` - data frame created on top of  `subject_test.txt`.
+7. `xTest` - data frame created on top of  `X_test.txt`.
+8. `yTest` - data frame created on top of  `y_test.txt`.
+9. `tests` - data frame that combines `subjectTest`, `xTest`, `yTest` as columns .
+10. `subjectTrain` - data frame created on top of  `subject_train.txt`.
+11. `xTrain` - data frame created on top of  `X_train.txt`.
+12. `yTrain` - data frame created on top of  `y_train.txt`.
+13. `trains` - data frame that combines `subjectTrain`, `xTrain`, `yTrain` as columns .
+14. `allData` - merged the training and the test sets to create one data set.
+15. `measurementsOnMeanAndStandardDeviaion` - data frame with desired measurements (anything containing "mean" or "std").
+16. `m` - data frame that added activity names to `measurementsOnMeanAndStandardDeviaion`.
+16. `tidyDataSet` - data frame with tidy data.
+16. `tidyDataSetByActivityAndSubject` data frame groped by  `ActivityName` and `SubjectID`.
+16. `summarized` - grouped by  `ActivityName` and `SubjectID` data frame with mean calculation for the measurements.
+
+##Output Data
 `run_analysis.R` creates `data` folder in the work directroy, if needed,  and produces `tidyDataSet.txt`. This data sets contains the following variables:
 
 1. *ActivityName*. Name of the activity. It could be one of the following:
@@ -96,5 +121,3 @@ The rest of the variables are average values of the corresponding measurement fo
 80. *fBodyBodyGyroJerkMag.std..*.
 81. *fBodyBodyGyroJerkMag.meanFreq..*.
 
-
-##Study Design
