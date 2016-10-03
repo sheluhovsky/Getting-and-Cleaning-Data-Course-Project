@@ -6,6 +6,18 @@ This document summarizes the variables, the data, and transformations / work imp
 ###Step 1
 The script sets a word directory as well as creates `data` folder, if needed. It also downloads [Samsung data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) into `data` folder.
 
+###Step 2
+The script loads the data from multiple files and merges the training and the test sets to create one data set
+
+###Step 3
+The script extracts only the measurements on the mean and standard deviation for each measurement.
+
+###Step 4
+The script uses descriptive activity names to name the activities in the data set.
+
+###Step 5
+The script creates a tidy data set, group it by `ActivityName` and `SubjectID`, calculates mean for the measurements and writes in to `tidyDataSet.txt` in `data` folder.
+
 ##Variables
 1. `destFile` - name of the file to save Samsung data on computer in the `data` folder.
 2. `activityLabels` - data frame created on top of  `activity_labels.txt`.
